@@ -36,18 +36,21 @@ window.addEventListener("load", function () {
     });
 
     let newYPosition = document.getElementById("rocket").offsetTop;
-    let newXPosition = document.getElementById("rocket").offsetLeft;
+    let newXPosition = document.getElementById("rocket").offsetLeft = 0;
+    document.getElementById("rocket").style.left = newXPosition + "px";
 
     btnUp = document.getElementById("up");
     btnUp.addEventListener("click", function(event) {
         newYPosition = newYPosition - 10;
         document.getElementById("rocket").style.top = newYPosition + "px";
+        document.getElementById("spaceShuttleHeight").innerHTML = Number(document.getElementById("spaceShuttleHeight").innerHTML) + 10000;
     });
 
     btnDown = document.getElementById("down");
     btnDown.addEventListener("click", function(event) {
         newYPosition = newYPosition + 10;
         document.getElementById("rocket").style.top = newYPosition + "px";
+        document.getElementById("spaceShuttleHeight").innerHTML = Number(document.getElementById("spaceShuttleHeight").innerHTML) - 10000;
     });
 
     btnLeft = document.getElementById("left");
@@ -59,7 +62,7 @@ window.addEventListener("load", function () {
     btnRight = document.getElementById("right");
     btnRight.addEventListener("click", function(event) {
         newXPosition = newXPosition + 10;
-        document.getElementById("rocket").style.right = newXPosition + "px";
+        document.getElementById("rocket").style.left = newXPosition + "px";
     });
 
 });
